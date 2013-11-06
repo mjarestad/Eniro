@@ -22,3 +22,5 @@ Add the Facade to the aliases array in `app/config/app.php`
     'Eniro'  => 'Eniro\EniroFacade',
 
 ##Usage
+
+Coming soon!
