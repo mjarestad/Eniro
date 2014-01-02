@@ -18,11 +18,8 @@
         "phpunit/phpunit": "3.7.*@dev"
     },
     "autoload": {
-        "classmap": [
-            "src/Mjarestad/Eniro"
-        ],
         "psr-0": {
-            "Mjarested\\Eniro\\": "src/"
+            "Mjarestad\\Eniro\\": "src/"
         }
     },
     "minimum-stability": "dev"
