@@ -1,20 +1,28 @@
 {
     "name": "mjarestad/eniro",
-    "description": "",
+    "description": "A wrapper for the Eniro company search api.",
+    "license": ["MIT"],
+    "keywords": ["laravel", "eniro"],
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "Mattias Jarestad",
+            "email": "mattias@portfolion.se"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "4.0.x",
         "kriswallsmith/buzz": "dev-master"
     },
+    "require-dev": {
+        "illuminate/support": "4.0.*",
+        "phpunit/phpunit": "3.7.*@dev"
+    },
     "autoload": {
+        "classmap": [
+            "src/Mjarestad/Eniro"
+        ],
         "psr-0": {
-            "Mjarestad\\Eniro": "src/"
+            "Mjarested\\Eniro\\": "src/"
         }
     },
     "minimum-stability": "dev"
