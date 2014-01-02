@@ -1,0 +1,21 @@
+{
+    "name": "mjarestad/eniro",
+    "description": "",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "kriswallsmith/buzz": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mjarestad\\Eniro": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
