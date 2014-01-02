@@ -1,6 +1,6 @@
 {
     "name": "mjarestad/eniro",
-    "description": "A wrapper for the Eniro company search api.",
+    "description": "A wrapper for Eniro Company Search API to get laravel-like syntax in Laravel 4.",
     "license": ["MIT"],
     "keywords": ["laravel", "eniro"],
     "authors": [
