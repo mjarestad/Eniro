@@ -215,6 +215,17 @@ class Eniro
 		return (array) json_decode(json_encode($this->getAttributes()), true);
 	}
 
+    /**
+     * Count number of results
+     * @return integer
+     */
+    public function count()
+    {
+        $result = $this->getAttributes();
+
+        return (int) count($result['adverts']);
+    }
+
 	/**
 	 * Make the call to the api
 	 * @return void
