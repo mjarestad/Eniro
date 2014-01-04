@@ -1,7 +1,7 @@
 Eniro
 =====
 
-A wrapper for Eniro API to get laravel-like syntax in Laravel 4.
+A wrapper for Eniro Company Search API to get laravel-like syntax in Laravel 4.
 
 ##Installation
 
@@ -23,4 +23,39 @@ Add the Facade to the aliases array in `app/config/app.php`
 
 ##Usage
 
-Coming soon!
+Simple search
+
+    Eniro::search('mcdonalds');
+
+Search a specific area
+
+    Eniro::area('Stockholm')->search('mcdonalds');
+
+Offset and limit
+
+    Eniro::skip(25)->take(25)->search('mcdonalds');
+
+Defina a country
+
+    Eniro::country('se')->search('mcdonalds');
+
+Add a callback function for Jsonp
+
+    Eniro::callback('callbackFunction')->search('mcdonalds');
+
+By default it returns an php object. If you would like json or array you can use the following method
+
+    Eniro::search('mcdonalds')->toJson();
+    Eniro::search('mcdonalds')->toArray();
+
+To count the number of results
+
+    Eniro::search('mcdonalds')->count();
+
+To search a specific Eniro id
+
+    Eniro::id(123456)->search();
+
+##Coming soon
+
+Testing...
