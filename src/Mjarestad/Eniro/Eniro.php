@@ -85,9 +85,13 @@ class Eniro
 	 * @param  string $query
 	 * @return Mjarestad\Eniro\Eniro
 	 */
-	public function search($query = null)
+	public function get($query = null)
 	{
-		$this->setApiParam('search_word', trim($query));
+        if ($query)
+        {
+            $this->query($query);
+        }
+
 		$this->callApi();
 
 		return $this;
@@ -103,6 +107,29 @@ class Eniro
     {
         $this->setApiParam('eniro_id', (int) $id);
         $this->callApi();
+
+        return $this;
+    }
+
+    public function first()
+    {
+        $this->skip(0);
+        $this->take(1);
+        $this->callApi();
+
+        return $this;
+    }
+
+    /**
+     * Search Query
+     * Specifies the search criteria, the keyword or keywords you would like to search for.
+     * Example values: advokat, hoteller, vvs
+     * @param  string $query
+     * @return Mjarestad\Eniro\Eniro
+     */
+    public function query($query)
+    {
+        $this->setApiParam('search_word', trim($query));
 
         return $this;
     }

@@ -25,23 +25,35 @@ Add the Facade to the aliases array in `app/config/app.php`
 
 Simple search
 
-    Eniro::search('mcdonalds');
+    // option 1
+    Eniro::get('mcdonalds');
+
+    // option 2
+    Eniro::query('mcdonalds')->get();
+
+Search and get the first result
+
+    Eniro::query('mcdonalds')->first();
+
+Search by a specific Eniro id
+
+    Eniro::find(123456);
 
 Search a specific area
 
-    Eniro::area('Stockholm')->search('mcdonalds');
+    Eniro::query('mcdonalds')->area('Stockholm')->get();
 
 Offset and limit
 
-    Eniro::skip(25)->take(25)->search('mcdonalds');
+    Eniro::skip(25)->take(25)->get('mcdonalds');
 
 Define a country
 
-    Eniro::country('se')->search('mcdonalds');
+    Eniro::country('se')->get('mcdonalds');
 
 Add a callback function for jsonp
 
-    Eniro::callback('callbackFunction')->search('mcdonalds');
+    Eniro::callback('callbackFunction')->get('mcdonalds');
 
 By default it returns an php object. If you would like json or array you can use the following method
 
@@ -51,10 +63,6 @@ By default it returns an php object. If you would like json or array you can use
 To count the number of results
 
     Eniro::search('mcdonalds')->count();
-
-To search a specific Eniro id
-
-    Eniro::find(123456);
 
 ##Coming soon
 
