@@ -41,7 +41,7 @@ Search by a specific Eniro id
 
 Search a specific area
 
-    Eniro::query('mcdonalds')->area('Stockholm')->get();
+    Eniro::area('Stockholm')->get('mcdonalds');
 
 Offset and limit
 
