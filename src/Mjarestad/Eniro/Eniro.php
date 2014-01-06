@@ -1,6 +1,5 @@
 <?php namespace Mjarestad\Eniro;
 
-use App;
 use Config;
 use Buzz\Browser;
 
@@ -75,7 +74,8 @@ class Eniro
 		$this->setApiParam('profile', Config::get('eniro::profile'));
 		$this->setApiParam('key', 	  Config::get('eniro::key'));
 		$this->setApiParam('version', Config::get('eniro::version'));
-		$this->setApiParam('country', Config::get('eniro::country'));
+        $this->setApiParam('country', Config::get('eniro::country'));
+		$this->setApiParam('from_list', 1);
 	}
 
 	/**
@@ -103,7 +103,7 @@ class Eniro
 	 */
 	public function skip($offset)
 	{
-		$this->setApiParam('from_list', (int) $offset);
+		$this->setApiParam('from_list', (int) $offset + 1);
 
 		return $this;
 	}
@@ -118,7 +118,7 @@ class Eniro
 	 */
 	public function take($limit)
 	{
-		$limit = (int) isset($this->apiParams['from_list']) ? $this->apiParams['from_list'] + $limit : $limit;
+		$limit = (int) isset($this->apiParams['from_list']) ? ($this->apiParams['from_list'] + $limit) - 1 : $limit;
 		$this->setApiParam('to_list', $limit);
 
 		return $this;
@@ -203,7 +203,8 @@ class Eniro
 	 */
 	public function toJson()
 	{
-		return $this->getContent();
+		//return $this->getContent();
+        return json_encode($this->toArray());
 	}
 
 	/**

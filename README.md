@@ -35,11 +35,11 @@ Offset and limit
 
     Eniro::skip(25)->take(25)->search('mcdonalds');
 
-Defina a country
+Define a country
 
     Eniro::country('se')->search('mcdonalds');
 
-Add a callback function for Jsonp
+Add a callback function for jsonp
 
     Eniro::callback('callbackFunction')->search('mcdonalds');
 
