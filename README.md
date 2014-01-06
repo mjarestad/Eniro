@@ -54,7 +54,7 @@ To count the number of results
 
 To search a specific Eniro id
 
-    Eniro::id(123456)->search();
+    Eniro::find(123456);
 
 ##Coming soon
 

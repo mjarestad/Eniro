@@ -92,6 +92,20 @@ class Eniro
 
 		return $this;
 	}
+
+    /**
+     * Search by Eniro ID
+     * Specifies the Eniro ID of a particular company you want to search for.
+     * @param  integer $id
+     * @return Mjarestad\Eniro\Eniro
+     */
+    public function find($id)
+    {
+        $this->setApiParam('eniro_id', (int) $id);
+        $this->callApi();
+
+        return $this;
+    }
 	
 	/**
 	 * Offset
@@ -149,19 +163,6 @@ class Eniro
 	public function area($area)
 	{
 		$this->setApiParam('geo_area', $area);
-
-		return $this;
-	}
-
-	/**
-	 * Eniro ID
-	 * Specifies the Eniro ID of a particular company you want to search for.
-	 * @param  integer $id
-	 * @return Mjarestad\Eniro\Eniro
-	 */
-	public function id($id)
-	{
-		$this->setApiParam('eniro_id', (int) $id);
 
 		return $this;
 	}
